@@ -6,6 +6,8 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_y0qk3"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_156m4"]
+
 [node name="Player" type="CharacterBody3D" unique_id=1381845347]
 script = ExtResource("1_156m4")
 
@@ -16,3 +18,9 @@ shape = SubResource("CapsuleShape3D_ojbdc")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1024447229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_y0qk3")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=297565617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0072271, -1.0197521)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=866344466]
+shape = SubResource("BoxShape3D_156m4")

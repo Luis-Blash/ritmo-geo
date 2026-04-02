@@ -22,6 +22,10 @@ folder_colors={
 "res://Scenes/": "green"
 }
 
+[global_group]
+
+damage=""
+
 [input]
 
 move_left={

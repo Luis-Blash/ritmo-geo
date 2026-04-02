@@ -1,10 +1,14 @@
 extends CharacterBody3D
 
+@onready var hitbox = $Area3D
 @export var JUMP_VELOCITY:float = 7.8
 @export var LANE_DISTANCE:float = 3.0  # distancia en unidades entre cada carril
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var current_lane:float = 0
-var alive:bool = true             # controla si el player responde a inputs
+var alive:bool = true
+
+func _ready():
+	hitbox.body_entered.connect(_on_hit)
 
 func _physics_process(delta: float) -> void:
 	if not alive:
@@ -28,6 +32,10 @@ func _physics_process(delta: float) -> void:
 	var target_x = current_lane * LANE_DISTANCE
 	velocity.x = lerp(velocity.x, (target_x - position.x) * 10.0, delta * 8.0)
 	move_and_slide()
+
+func _on_hit(body):
+	if body.is_in_group("damage"):
+		die()
 
 func die():
 	alive = false
