@@ -8,7 +8,7 @@ var current_lane:float = 0
 var alive:bool = true
 
 func _ready():
-	hitbox.body_entered.connect(_on_hit)
+	hitbox.area_entered.connect(_on_hit)
 	GameManager.player.current_lane = current_lane
 
 func _physics_process(delta: float) -> void:
@@ -35,8 +35,8 @@ func _physics_process(delta: float) -> void:
 	velocity.x = lerp(velocity.x, (target_x - position.x) * 10.0, delta * 8.0)
 	move_and_slide()
 
-func _on_hit(body):
-	if body.is_in_group("damage"):
+func _on_hit(area):
+	if area.is_in_group("damage"):
 		die()
 
 func die():

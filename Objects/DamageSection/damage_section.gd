@@ -27,18 +27,14 @@ func _process(delta):
 		queue_free()
 		
 func _randomize_lanes():
-	# decide cuántos carriles bloquear: 1 o 2 (nunca 3)
 	var lanes = [cube_left, cube_center, cube_right]
 	lanes.shuffle()
-
-	# cantidad de cubos a mostrar (1 o 2 bloqueados)
 	var blocked = randi_range(1, 2)
-
 	for i in range(lanes.size()):
-		# muestra solo los primeros "blocked" cubos
 		lanes[i].visible = i < blocked
-		# desactiva colision si no es visible
-		lanes[i].use_collision = i < blocked
+		# Area3D usa monitorable en vez de use_collision
+		lanes[i].monitorable = i < blocked
+		lanes[i].monitoring = i < blocked
 		
 func _on_game_paused(is_paused: bool):
 	active = !is_paused
