@@ -18,12 +18,11 @@ func _ready():
 func _process(delta):
 	if not active:
 		return
-
-	# se mueve hacia el player
+		
 	position.z += speed * delta
 
-	# se autodestruye al pasar al jugador
-	if position.z > 5.0:
+	# compara global_position para que funcione sin importar dónde esté el padre
+	if global_position.z > 5.0:
 		queue_free()
 		
 func _randomize_lanes():
