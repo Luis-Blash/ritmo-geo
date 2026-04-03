@@ -13,6 +13,7 @@ var active = true  # se pausa desde afuera
 
 func _ready():
 	_randomize_lanes()
+	GameManager.on_pause.connect(_on_game_paused)
 
 
 func _process(delta):
@@ -38,3 +39,6 @@ func _randomize_lanes():
 		lanes[i].visible = i < blocked
 		# desactiva colision si no es visible
 		lanes[i].use_collision = i < blocked
+		
+func _on_game_paused(is_paused: bool):
+	active = !is_paused

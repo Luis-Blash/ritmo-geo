@@ -9,9 +9,10 @@ var alive:bool = true
 
 func _ready():
 	hitbox.body_entered.connect(_on_hit)
+	GameManager.player.current_lane = current_lane
 
 func _physics_process(delta: float) -> void:
-	if not alive:
+	if GameManager.hasPauseGame():
 		return
 
 	# GRAVEDAD
@@ -28,6 +29,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("move_right"):
 		current_lane = min(current_lane + 1, 1)
 
+	GameManager.player.current_lane = current_lane
 	# MOVIMIENTO LATERAL SUAVE — interpola hacia el carril objetivo
 	var target_x = current_lane * LANE_DISTANCE
 	velocity.x = lerp(velocity.x, (target_x - position.x) * 10.0, delta * 8.0)
@@ -38,4 +40,4 @@ func _on_hit(body):
 		die()
 
 func die():
-	alive = false
+	GameManager.take_damage()
