@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var JUMP_VELOCITY:float = 7.8
 @export var LANE_DISTANCE:float = 3.0  # distancia en unidades entre cada carril
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var current_lane:float = 0
+var current_lane:int = 0
 var alive:bool = true
 
 func _ready():

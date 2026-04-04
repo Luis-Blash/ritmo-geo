@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dubsjwbmjrblk"]
+
+[ext_resource type="Script" uid="uid://y5dx4iwxg215" path="res://UI/GAMEUI/game_ui.gd" id="1_rtpvj"]
+
+[node name="GameLayer" type="CanvasLayer" unique_id=550822693]
+
+[node name="GameUI" type="Control" parent="." unique_id=1568133186]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rtpvj")
+
+[node name="HUD" type="VBoxContainer" parent="GameUI" unique_id=1491993614]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 70.0
+
+[node name="LivesLabel" type="Label" parent="GameUI/HUD" unique_id=666288775]
+layout_mode = 2
+text = "Vidas: 3"
+
+[node name="ScoreLabel" type="Label" parent="GameUI/HUD" unique_id=125435634]
+layout_mode = 2
+text = "Score 3"
+
+[node name="PauseScreen" type="ColorRect" parent="GameUI" unique_id=217668358]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="PauseLabel" type="Label" parent="GameUI/PauseScreen" unique_id=644485282]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverScreen" type="ColorRect" parent="GameUI" unique_id=727056953]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="GameOverLabel" type="Label" parent="GameUI/GameOverScreen" unique_id=1734193024]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="GameUI/GameOverScreen" unique_id=1431088077]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50100005
+anchor_top = 0.59300005
+anchor_right = 0.50100005
+anchor_bottom = 0.59300005
+offset_left = -38.15204
+offset_top = -15.264038
+offset_right = 37.84796
+offset_bottom = 15.735962
+grow_horizontal = 2
+grow_vertical = 2
+text = "Reiniciar
+"

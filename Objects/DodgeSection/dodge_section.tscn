@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bmn6pgmpxx7n"]
+
+[ext_resource type="Script" uid="uid://cpyho1oohpkxe" path="res://Objects/DodgeSection/dodge_section.gd" id="1_6iesk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oy2tr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oy2tr"]
+albedo_color = Color(5.7756904e-07, 0.6240786, 0.6261176, 1)
+
+[node name="DodgeSection" type="Node3D" unique_id=565812911]
+script = ExtResource("1_6iesk")
+
+[node name="WallLeft" type="Area3D" parent="." unique_id=439069741 groups=["damage"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallLeft" unique_id=2104735701]
+shape = SubResource("BoxShape3D_oy2tr")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="WallLeft" unique_id=1413569100]
+material = SubResource("StandardMaterial3D_oy2tr")
+
+[node name="WallCenter" type="Area3D" parent="." unique_id=1856371742 groups=["damage"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallCenter" unique_id=1984556720]
+shape = SubResource("BoxShape3D_oy2tr")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="WallCenter" unique_id=1629222842]
+material = SubResource("StandardMaterial3D_oy2tr")
+
+[node name="WallRight" type="Area3D" parent="." unique_id=1993654119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallRight" unique_id=1402157767]
+shape = SubResource("BoxShape3D_oy2tr")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="WallRight" unique_id=1743058952]
+material = SubResource("StandardMaterial3D_oy2tr")

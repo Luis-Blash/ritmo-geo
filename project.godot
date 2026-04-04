@@ -24,7 +24,8 @@ GameManager="*uid://tatrxhvmrxie"
 folder_colors={
 "res://Manager/": "yellow",
 "res://Objects/": "orange",
-"res://Scenes/": "green"
+"res://Scenes/": "green",
+"res://UI/": "blue"
 }
 
 [global_group]

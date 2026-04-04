@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dy5qeomnq2awi" path="res://Objects/Player/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://b5rsahvvmcbsi" path="res://Manager/SpawnManager/spawn_manager.tscn" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bxgnkyfigpk0v" path="res://Objects/DamageSection/damage_section.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://bmn6pgmpxx7n" path="res://Objects/DodgeSection/dodge_section.tscn" id="4_kry3j"]
+[ext_resource type="PackedScene" uid="uid://dubsjwbmjrblk" path="res://UI/GAMEUI/game_ui.tscn" id="6_21xkr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -38,9 +40,11 @@ material = SubResource("StandardMaterial3D_8gbba")
 
 [node name="SpawnManager" parent="." unique_id=1275512299 instance=ExtResource("1_jjvhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.601345)
-sections = Array[PackedScene]([ExtResource("3_8gbba")])
+sections = Array[PackedScene]([ExtResource("3_8gbba"), ExtResource("4_kry3j")])
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=584783354]
 transform = Transform3D(0.9980445, 0.03878528, 0.04902032, -0.056338828, 0.8978663, 0.4366487, -0.02707817, -0.43855652, 0.8982955, -0.17888165, 4.1243544, 3.1363297)
 
 [node name="Player" parent="." unique_id=1381845347 groups=["player"] instance=ExtResource("1_jjgbg")]
+
+[node name="GameLayer" parent="." unique_id=550822693 instance=ExtResource("6_21xkr")]
