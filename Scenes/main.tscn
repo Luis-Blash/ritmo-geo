@@ -38,7 +38,7 @@ material = SubResource("StandardMaterial3D_8gbba")
 
 [node name="SpawnManager" parent="." unique_id=1275512299 instance=ExtResource("1_jjvhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.601345)
-damage_section = ExtResource("3_8gbba")
+sections = Array[PackedScene]([ExtResource("3_8gbba")])
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=584783354]
 transform = Transform3D(0.9980445, 0.03878528, 0.04902032, -0.056338828, 0.8978663, 0.4366487, -0.02707817, -0.43855652, 0.8982955, -0.17888165, 4.1243544, 3.1363297)

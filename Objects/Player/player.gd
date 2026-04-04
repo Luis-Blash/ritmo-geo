@@ -12,7 +12,7 @@ func _ready():
 	GameManager.player.current_lane = current_lane
 
 func _physics_process(delta: float) -> void:
-	if GameManager.hasPauseGame():
+	if GameManager.is_stopped():
 		return
 
 	# GRAVEDAD

@@ -17,10 +17,6 @@ albedo_color = Color(0.9254902, 0.05490196, 0, 1)
 script = ExtResource("1_b8fd4")
 speed = null
 
-[node name="Label3D" type="Label3D" parent="." unique_id=219998341]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9551159, 0)
-text = "Damage Section"
-
 [node name="CubeCenter" type="Area3D" parent="." unique_id=1748713135 groups=["damage"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 

@@ -17,7 +17,19 @@ signal on_game_over
 signal on_lives_changed(new_lives: int)
 signal on_score_changed(new_score: int)
 
+# --- Menu ---
+func _process(delta):
+	if Input.is_action_just_pressed("menu"):
+		if !paused:
+			pause()
+		else:
+			resume()
+		
+
 # --- Métodos de pausa ---
+func is_stopped() -> bool:
+	return paused or game_over
+	
 func pause():
 	paused = true
 	emit_signal("on_pause", true)
@@ -40,10 +52,7 @@ func add_score(points: int):
 func trigger_game_over():
 	game_over = true
 	emit_signal("on_game_over")
-
-# --- PAUSE ---
-func hasPauseGame():
-	return paused or game_over
+	
 # --- Reset ---
 func reset():
 	paused = false
