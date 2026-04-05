@@ -32,9 +32,14 @@ func _randomize_lanes():
 	var blocked = randi_range(1, 2)
 	for i in range(lanes.size()):
 		lanes[i].visible = i < blocked
-		# Area3D usa monitorable en vez de use_collision
 		lanes[i].monitorable = i < blocked
 		lanes[i].monitoring = i < blocked
+		if i < blocked:
+			if randf() < 0.3:
+				lanes[i].position.y = 2.0
+		
+		
+		
 		
 func _on_game_paused(is_paused: bool):
 	active = !is_paused

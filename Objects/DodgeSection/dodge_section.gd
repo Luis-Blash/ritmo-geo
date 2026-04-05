@@ -22,13 +22,10 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _randomize_gap() -> void:
-	# elige al azar cuál carril queda LIBRE
 	var walls = [wall_left, wall_center, wall_right]
 	var free_lane = randi() % walls.size()
-
 	for i in range(walls.size()):
 		var is_free = i == free_lane
-		# el carril libre se oculta y desactiva
 		walls[i].visible      = !is_free
 		walls[i].monitorable  = !is_free
 		walls[i].monitoring   = !is_free

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @onready var hitbox = $Area3D
-@export var JUMP_VELOCITY:float = 7.8
+@export var JUMP_VELOCITY:float = 5.0
 @export var LANE_DISTANCE:float = 3.0  # distancia en unidades entre cada carril
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var current_lane:int = 0
